@@ -1,0 +1,77 @@
+#bannarPart{
+    background: url(../images/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+}
+
+#aboutPart{
+    background: url(../images/aboutPart.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+#categoriesPart{
+    background: url(../images/Categories\ Part.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+.offerBanner{
+    background: url(../images/offer\ banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 50px;
+    padding: 50px 0;
+}
+
+#customerTestimonials{
+    background: url(../images/customerTestimonials.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
+}
+
+#meetOurTeam{
+    background: url(../images/customerTestimonials.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+#contactPart{
+    background: url(../images/contactPart.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+}
+
+.prev{
+    font-size: 50px;
+    z-index: 999;
+    position : absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c6964f;
+}
+
+.next{
+    font-size: 50px;
+    position : absolute;
+    top: 50%;
+    right: 0;
+    color: #c6964f;
+    transform: translateY(-50%);
+
+}
