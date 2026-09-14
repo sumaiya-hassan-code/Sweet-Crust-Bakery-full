@@ -1890,79 +1890,83 @@
 
         <!-- Offer Banner -->
         <div
-            class="offerBanner
-                   mt-14 sm:mt-18
-                   rounded-2xl
-                   px-5 sm:px-10
-                   py-8 sm:py-10
-                   text-center
-                   hover:scale-[1.02]
+    class="offerBanner
+           w-[94%] sm:w-[92%] lg:w-[90%]
+           mx-auto
+           mt-14 sm:mt-18
+           px-5 sm:px-8 lg:px-10
+           py-8 sm:py-10 lg:py-[50px]
+           rounded-[25px] sm:rounded-[35px] lg:rounded-[50px]
+           text-center
+           hover:scale-[1.02]
+           transition duration-300"
+>
+
+    <div
+        class="flex flex-col
+               items-center
+               justify-center
+               text-center"
+    >
+
+        <!-- Gift Icon -->
+        <i
+            class="fa-solid fa-gift
+                   text-2xl sm:text-3xl
+                   mb-2
+                   text-[#B7792E]"
+        ></i>
+
+        <!-- Small Heading -->
+        <p
+            class="font-[Poppins]
+                   text-sm sm:text-base lg:text-lg
+                   font-normal
+                   text-[#B7792E]"
+        >
+            Special Offer
+        </p>
+
+        <!-- Main Heading -->
+        <p
+            class="font-[Playfair_Display]
+                   text-2xl sm:text-3xl lg:text-4xl
+                   font-semibold
+                   text-[#2F1B14]
+                   leading-tight
+                   mt-2"
+        >
+            Get
+            <span class="text-[#B7792E]">20%</span>
+            Off
+            <br>
+
+            <span class="text-xl sm:text-2xl lg:text-3xl">
+                On Your First Order!
+            </span>
+        </p>
+
+        <!-- Button -->
+        <button
+            class="font-[Poppins]
+                   text-sm sm:text-base lg:text-lg
+                   font-medium
+                   text-white
+                   bg-amber-800
+                   mt-4
+                   rounded-lg
+                   py-2 px-4
+                   sm:py-2.5 sm:px-5
+                   hover:bg-[#8B4513]
+                   hover:scale-105
                    transition duration-300"
         >
+            Shop Now →
+        </button>
 
-            <div
-                class="flex flex-col
-                       items-center
-                       justify-center
-                       text-center"
-            >
+    </div>
 
-                <i
-                    class="fa-solid fa-gift
-                           text-2xl sm:text-3xl
-                           mb-2
-                           text-[#B7792E]"
-                ></i>
-
-
-                <p
-                    class="font-[Poppins]
-                           text-base sm:text-lg
-                           font-normal
-                           text-[#B7792E]"
-                >
-                    Special Offer
-                </p>
-
-
-                <p
-                    class="font-[Playfair_Display]
-                           text-3xl sm:text-4xl
-                           font-semibold
-                           text-[#2F1B14]
-                           leading-tight
-                           mt-2"
-                >
-                    Get
-                    <span class="text-[#B7792E]">20%</span>
-                    Off
-                    <br>
-
-                    <span class="text-2xl sm:text-3xl">
-                        On Your First Order!
-                    </span>
-                </p>
-
-
-                <button
-                    class="font-[Poppins]
-                           text-base sm:text-lg
-                           font-medium
-                           text-white
-                           bg-amber-800
-                           mt-4
-                           rounded-lg
-                           py-2.5 px-5
-                           hover:bg-[#8B4513]
-                           hover:scale-105
-                           transition duration-300"
-                >
-                    Shop Now →
-                </button>
-
-            </div>
-
-        </div>
+</div>
 
     </div>
 
