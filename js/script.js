@@ -63,5 +63,22 @@ navLinks.forEach(link => {
 
 });
 
+// Modal open
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = "block";
+}
+
+// Modal off
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
+
+// model off
+window.onclick = function(event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = "none";
+  }
+}
+
 
 
