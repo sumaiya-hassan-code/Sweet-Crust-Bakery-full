@@ -19,11 +19,11 @@
 <body>
 
 
-    <!-- Header Part Start -->
-    
-<nav class="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md shadow-md">
+    <!-- Header-->
+    <header>
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md shadow-md">
 
-    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="h-20 flex items-center justify-between">
 
@@ -121,7 +121,9 @@
                 </button>
 
             </div>
-
+        </div>
+        </div>
+        </nav>
 
             
             <!-- MOBILE -->
@@ -164,8 +166,7 @@
 
         </div>
 
-    </div>
-</nav>
+    
 
 
 <!-- MOBILE MENU -->
@@ -218,10 +219,11 @@
     </ul>
 
 </div>
+    </header>
+    <!-- Header -->
         
-    <!-- Header Part End -->
-
-    <!-- Banner Part Start -->
+        <main>
+            <!-- Banner Part Start -->
     <section id="bannarPart" class="pt-24">
 
     <div
@@ -3317,8 +3319,10 @@
 
     </section>
     <!-- Contact Part End -->   
+        </main>
+    
 
-    <!-- Footer Part Start -->
+    <!-- Footer -->
     <footer
     class="bg-linear-to-r
            from-[#3B1F13]
@@ -3744,27 +3748,27 @@
     </div>
 
     </footer>
-<!-- Footer Part End -->
+    <!-- Footer-->
 
 
-<!-- SEARCH MODAL -->
-<div id="searchModal" class="modal">
+    <!-- SEARCH MODAL -->
+    <div id="searchModal" class="modal">
   <div class="modal-content">
     <span class="close-btn" onclick="closeModal('searchModal')">&times;</span>
     <h2>Search Our Bakery</h2>
     <input type="text" placeholder="Search for cakes, breads, pastries..." class="modal-input">
     <button class="modal-action-btn">Search</button>
   </div>
-</div>
+    </div>
 
-<!-- Cart Overlay -->
-<div id="cart-overlay"
+    <!-- Cart Overlay -->
+    <div id="cart-overlay"
      class="fixed inset-0 bg-black/40 hidden z-40">
-</div>
+    </div>
 
 
-<!-- Cart Drawer -->
-<div id="cart-drawer"
+    <!-- Cart Drawer -->
+    <div id="cart-drawer"
      class="fixed top-0 right-0
             w-full sm:w-[400px]
             h-full bg-white
@@ -3827,10 +3831,10 @@
 
     </div>
 
-</div>
+    </div>
 
-<!-- QUICK CONTACT MODAL -->
-<div id="contactModal" class="modal">
+    <!-- QUICK CONTACT MODAL -->
+    <div id="contactModal" class="modal">
   <div class="modal-content">
     <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
     <h2>Contact Sweet Crust Bakery</h2>
@@ -3842,7 +3846,8 @@
       <button type="submit" class="modal-action-btn">Send Message</button>
     </form>
   </div>
-</div>
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/script.js"></script>
