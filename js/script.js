@@ -82,13 +82,21 @@ window.onclick = function(event) {
 
 
 // cart 
+// ================= CART =================
+
 let cart = [];
+
+
+// ================= ELEMENTS =================
 
 const addToCartButtons =
     document.querySelectorAll(".add-to-cart");
 
 const cartCount =
     document.getElementById("cart-count");
+
+const mobileCartCount =
+    document.getElementById("mobile-cart-count");
 
 const cartItems =
     document.getElementById("cart-items");
@@ -99,6 +107,9 @@ const cartTotal =
 const cartBtn =
     document.getElementById("cart-btn");
 
+const mobileCartBtn =
+    document.getElementById("mobile-cart-btn");
+
 const cartDrawer =
     document.getElementById("cart-drawer");
 
@@ -107,6 +118,9 @@ const closeCart =
 
 const cartOverlay =
     document.getElementById("cart-overlay");
+
+
+// ================= ADD TO CART =================
 
 addToCartButtons.forEach(function(button) {
 
@@ -124,7 +138,9 @@ addToCartButtons.forEach(function(button) {
 
         const existingProduct =
             cart.find(function(item) {
+
                 return item.name === name;
+
             });
 
 
@@ -135,9 +151,13 @@ addToCartButtons.forEach(function(button) {
         } else {
 
             cart.push({
+
                 name: name,
+
                 price: price,
+
                 quantity: 1
+
             });
 
         }
@@ -149,9 +169,13 @@ addToCartButtons.forEach(function(button) {
 
 });
 
+
+// ================= UPDATE CART =================
+
 function updateCart() {
 
     let totalQuantity = 0;
+
 
     cart.forEach(function(item) {
 
@@ -159,27 +183,52 @@ function updateCart() {
 
     });
 
-    cartCount.innerText = totalQuantity;
+
+    // Desktop count
+    if (cartCount) {
+
+        cartCount.innerText =
+            totalQuantity;
+
+    }
+
+
+    // Mobile count
+    if (mobileCartCount) {
+
+        mobileCartCount.innerText =
+            totalQuantity;
+
+    }
+
 
     renderCart();
 
 }
 
+
+// ================= RENDER CART =================
+
 function renderCart() {
 
     cartItems.innerHTML = "";
 
+
+    // Empty cart
     if (cart.length === 0) {
 
         cartItems.innerHTML = `
-            <p class="text-center text-gray-500">
+
+            <p class="text-center text-amber-800">
                 Your cart is empty.
             </p>
+
         `;
 
         cartTotal.innerText = "0";
 
         return;
+
     }
 
 
@@ -188,39 +237,53 @@ function renderCart() {
 
     cart.forEach(function(item, index) {
 
+
         const itemTotal =
             item.price * item.quantity;
+
 
         total += itemTotal;
 
 
         cartItems.innerHTML += `
 
-            <div class="flex items-center
-                        justify-between
-                        border-b pb-4">
+            <div
+                class="flex items-center
+                       justify-between
+                       border-b
+                       border-amber-200
+                       pb-4">
 
                 <div>
 
-                    <h3 class="font-semibold">
+                    <h3 class="font-semibold
+                               text-amber-900">
+
                         ${item.name}
+
                     </h3>
 
-                    <p class="text-gray-500">
-                        ৳${item.price} × ${item.quantity}
+                    <p class="text-amber-800">
+
+                        ৳${item.price} ×
+                        ${item.quantity}
+
                     </p>
 
                 </div>
 
 
-                <div class="flex items-center gap-2">
+                <div
+                    class="flex items-center gap-2">
 
                     <button
                         onclick="decreaseQuantity(${index})"
                         class="w-7 h-7
                                rounded-full
                                bg-gray-200">
+
                         -
+
                     </button>
 
 
@@ -234,7 +297,9 @@ function renderCart() {
                         class="w-7 h-7
                                rounded-full
                                bg-gray-200">
+
                         +
+
                     </button>
 
                 </div>
@@ -249,7 +314,10 @@ function renderCart() {
     cartTotal.innerText = total;
 
 }
-// quantity increase:
+
+
+// ================= INCREASE =================
+
 function increaseQuantity(index) {
 
     cart[index].quantity++;
@@ -257,7 +325,10 @@ function increaseQuantity(index) {
     updateCart();
 
 }
-// Decrease
+
+
+// ================= DECREASE =================
+
 function decreaseQuantity(index) {
 
     if (cart[index].quantity > 1) {
@@ -270,23 +341,54 @@ function decreaseQuantity(index) {
 
     }
 
+
     updateCart();
 
 }
 
-cartBtn.addEventListener("click", function() {
 
-    cartDrawer.classList.remove("translate-x-full");
+// ================= OPEN CART =================
 
-    cartOverlay.classList.remove("hidden");
+function openCartDrawer() {
 
-});
+    cartDrawer.classList.remove(
+        "translate-x-full"
+    );
+
+    cartOverlay.classList.remove(
+        "hidden"
+    );
+
+}
+
+
+// ================= DESKTOP CART =================
+
+cartBtn.addEventListener(
+    "click",
+    openCartDrawer
+);
+
+
+// ================= MOBILE CART =================
+
+mobileCartBtn.addEventListener(
+    "click",
+    openCartDrawer
+);
+
+
+// ================= CLOSE CART =================
 
 function closeCartDrawer() {
 
-    cartDrawer.classList.add("translate-x-full");
+    cartDrawer.classList.add(
+        "translate-x-full"
+    );
 
-    cartOverlay.classList.add("hidden");
+    cartOverlay.classList.add(
+        "hidden"
+    );
 
 }
 
@@ -301,4 +403,3 @@ cartOverlay.addEventListener(
     "click",
     closeCartDrawer
 );
-

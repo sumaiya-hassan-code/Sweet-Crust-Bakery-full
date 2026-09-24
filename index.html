@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    <!-- Header Part Start -->
 
 
     <!-- Header Part Start -->
@@ -94,12 +93,22 @@
                               hover:scale-125 transition duration-300"></i>
                 </a>
 
-                <a href="javascript:void(0)" onclick="openModal('cartModal')"id="cart-btn" class="relative">
-                    <i class="fa-solid fa-cart-shopping
-                            text-xl text-amber-800
-                            hover:scale-125 transition duration-300"></i>
-                            <span id="cart-count"class="absolute -top-3 -right-2 bg-red-600 text-white w-5 h-5 rounded-full text-xs flex items-center justify-center">0</span>
-                </a>
+                <a href="javascript:void(0)" id="cart-btn" class="relative">
+
+                <i class="fa-solid fa-cart-shopping text-xl text-amber-800 hover:scale-125 transition duration-300">
+                </i>
+
+                <span id="cart-count" class="absolute
+               -top-3
+               -right-2
+               bg-red-600
+               text-white
+               w-5 h-5
+               rounded-full
+               text-xs
+               flex
+               items-center
+               justify-center">0</span></a>
 
                 <button
                     class="bg-amber-800 text-white
@@ -114,20 +123,42 @@
             </div>
 
 
+            
             <!-- MOBILE -->
             <div class="flex lg:hidden items-center gap-5">
 
-                <a href="#">
-                    <i class="fa-solid fa-cart-shopping
-                              text-xl text-amber-800"></i>
-                </a>
+    <!-- Mobile Cart -->
+    <button
+        id="mobile-cart-btn"
+        type="button"
+        class="relative text-amber-800">
 
-                <button
-                    id="menuBtn"
-                    type="button"
-                    class="text-2xl text-amber-800">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+        <i class="fa-solid fa-cart-shopping text-xl"></i>
+
+        <span
+            id="mobile-cart-count"
+            class="absolute -top-3 -right-3
+                   bg-red-600 text-white
+                   w-5 h-5 rounded-full
+                   text-xs
+                   flex items-center justify-center">
+
+            0
+
+        </span>
+
+    </button>
+
+
+    <!-- Mobile Menu -->
+    <button
+        id="menuBtn"
+        type="button"
+        class="text-2xl text-amber-800">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
 
             </div>
 
@@ -1267,10 +1298,12 @@
 
 
         <!-- Product Cards -->
-<div class="slides mt-10 sm:mt-12">
+        <div class="slides mt-10 sm:mt-12">
 
     <!-- Chocolate Cake -->
-    <div class="slide px-2">
+    <div class="slide px-2 product-card" 
+     data-name="Chocolate Cake"
+     data-price="850">
 
         <div
             class="bg-transparent
@@ -1348,7 +1381,8 @@
             <!-- Button -->
             <button
                      
-                class="font-[Poppins]
+                class="add-to-cart
+                       font-[Poppins]
                        text-sm sm:text-base
                        font-medium
                        text-[#B7792E]
@@ -1374,7 +1408,9 @@
     </div>
 
     <!-- Fresh Breads -->
-    <div class="slide px-2">
+    <div class="slide px-2 product-card" 
+     data-name="Fresh Breads"
+     data-price="120">
 
         <div
             class="bg-transparent
@@ -1451,7 +1487,8 @@
 
             <!-- Button -->
             <button
-                class="font-[Poppins]
+                class="add-to-cart
+                       font-[Poppins]
                        text-sm sm:text-base
                        font-medium
                        text-[#B7792E]
@@ -1476,8 +1513,10 @@
     </div>
 
 
-    <!-- Butter Croissant -->
-    <div class="slide px-2">
+    <!-- Butter Croissant --> 
+    <div class="slide px-2 product-card" 
+     data-name="Butter Croissant "
+     data-price="150">
 
         <div
             class="bg-transparent
@@ -1554,7 +1593,8 @@
 
             <!-- Button -->
             <button
-                class="font-[Poppins]
+                class="add-to-cart
+                       font-[Poppins]
                        text-sm sm:text-base
                        font-medium
                        text-[#B7792E]
@@ -1567,9 +1607,8 @@
                        mt-3
                        flex justify-center items-center
                        hover:bg-[#B7792E]
-                       hover:text-white
-                       transition duration-300"
-            >
+                      hover:text-white
+                        transition duration-300">
                 Add to Cart
                 <i class="fa-solid fa-cart-shopping ml-2"></i>
             </button>
@@ -1581,7 +1620,9 @@
 
 
     <!-- Choco Cookies -->
-    <div class="slide px-2">
+    <div class="slide px-2 product-card" 
+     data-name="Choco Cookies"
+     data-price="100">
 
         <div
             class="bg-transparent
@@ -1658,7 +1699,8 @@
 
             <!-- Button -->
             <button
-                class="font-[Poppins]
+                class="add-to-cart
+                       font-[Poppins]
                        text-sm sm:text-base
                        font-medium
                        text-[#B7792E]
@@ -1684,7 +1726,9 @@
 
 
     <!-- Blueberry Muffin -->
-    <div class="slide px-2">
+    <div class="slide px-2 product-card" 
+     data-name="Blueberry Muffin "
+     data-price="110">
 
         <div
             class="bg-transparent
@@ -1761,7 +1805,8 @@
 
             <!-- Button -->
             <button
-                class="font-[Poppins]
+                class="add-to-cart
+                       font-[Poppins]
                        text-sm sm:text-base
                        font-medium
                        text-[#B7792E]
@@ -1787,7 +1832,9 @@
 
 
     <!-- Fudge Brownie -->
-    <div class="slide px-2">
+    <div class="slide px-2 product-card" 
+     data-name="Fudge Brownie "
+     data-price="130">
 
         <div
             class="bg-transparent
@@ -1864,7 +1911,8 @@
 
             <!-- Button -->
             <button
-                class="font-[Poppins]
+                class="add-to-cart
+                       font-[Poppins]
                        text-sm sm:text-base
                        font-medium
                        text-[#B7792E]
@@ -1889,7 +1937,7 @@
     </div>
 
 
-</div>
+        </div>
 
         <!-- Offer Banner -->
         <div
@@ -1969,7 +2017,7 @@
 
     </div>
 
-</div>
+        </div>
 
     
 
