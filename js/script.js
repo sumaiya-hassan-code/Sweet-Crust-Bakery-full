@@ -81,10 +81,10 @@ window.onclick = function(event) {
 }
 
 
-// cart 
+
 // ================= CART =================
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("sweetCrustCart")) || [];
 
 
 // ================= ELEMENTS =================
@@ -169,6 +169,16 @@ addToCartButtons.forEach(function(button) {
 
 });
 
+// ================= SAVE CART =================
+
+function saveCart() {
+
+    localStorage.setItem(
+        "sweetCrustCart",
+        JSON.stringify(cart)
+    );
+
+}
 
 // ================= UPDATE CART =================
 
@@ -184,16 +194,15 @@ function updateCart() {
     });
 
 
-    // Desktop count
+    // Desktop cart count
     if (cartCount) {
 
-        cartCount.innerText =
-            totalQuantity;
+        cartCount.innerText = totalQuantity;
 
     }
 
 
-    // Mobile count
+    // Mobile cart count
     if (mobileCartCount) {
 
         mobileCartCount.innerText =
@@ -202,6 +211,11 @@ function updateCart() {
     }
 
 
+    // Save cart
+    saveCart();
+
+
+    // Show cart
     renderCart();
 
 }
@@ -403,3 +417,6 @@ cartOverlay.addEventListener(
     "click",
     closeCartDrawer
 );
+
+// Load saved cart when page starts
+updateCart();
