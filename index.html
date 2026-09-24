@@ -94,10 +94,11 @@
                               hover:scale-125 transition duration-300"></i>
                 </a>
 
-                <a href="javascript:void(0)" onclick="openModal('cartModal')">
+                <a href="javascript:void(0)" onclick="openModal('cartModal')"id="cart-btn" class="relative">
                     <i class="fa-solid fa-cart-shopping
-                              text-xl text-amber-800
-                              hover:scale-125 transition duration-300"></i>
+                            text-xl text-amber-800
+                            hover:scale-125 transition duration-300"></i>
+                            <span id="cart-count"class="absolute -top-3 -right-2 bg-red-600 text-white w-5 h-5 rounded-full text-xs flex items-center justify-center">0</span>
                 </a>
 
                 <button
@@ -1346,6 +1347,7 @@
 
             <!-- Button -->
             <button
+                     
                 class="font-[Poppins]
                        text-sm sm:text-base
                        font-medium
@@ -1366,10 +1368,10 @@
                 <i class="fa-solid fa-cart-shopping ml-2"></i>
             </button>
 
-        </div>
+        </d>
 
     </div>
-
+    </div>
 
     <!-- Fresh Breads -->
     <div class="slide px-2">
@@ -1575,6 +1577,7 @@
         </div>
 
     </div>
+
 
 
     <!-- Choco Cookies -->
@@ -1885,8 +1888,8 @@
 
     </div>
 
-</div>
 
+</div>
 
         <!-- Offer Banner -->
         <div
@@ -1968,7 +1971,7 @@
 
 </div>
 
-    </div>
+    
 
     </section>
     <!-- Best Seller Part End -->
@@ -3706,19 +3709,76 @@
   </div>
 </div>
 
-<!-- CART MODAL / DRAWER -->
-<div id="cartModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('cartModal')">&times;</span>
-    <h2>Your Shopping Cart</h2>
-    <div class="cart-items">
-      <p>Your cart is currently empty.</p>
+<!-- Cart Overlay -->
+<div id="cart-overlay"
+     class="fixed inset-0 bg-black/40 hidden z-40">
+</div>
+
+
+<!-- Cart Drawer -->
+<div id="cart-drawer"
+     class="fixed top-0 right-0
+            w-full sm:w-[400px]
+            h-full bg-white
+            z-50
+            translate-x-full
+            transition-transform duration-300">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between
+                p-5 border-b">
+
+        <h2 class="text-2xl font-semibold">
+            Your Cart
+        </h2>
+
+        <button id="close-cart"
+                class="text-2xl">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
     </div>
-    <div class="cart-footer">
-      <h3>Total: ৳0</h3>
-      <button class="modal-action-btn">Checkout</button>
+
+
+    <!-- Cart Items -->
+    <div id="cart-items"
+         class="p-5 space-y-4
+                h-[calc(100%-180px)]
+                overflow-y-auto">
+
+        <p id="empty-cart"
+           class="text-center text-gray-500">
+            Your cart is empty.
+        </p>
+
     </div>
-  </div>
+
+
+    <!-- Cart Bottom -->
+    <div class="absolute bottom-0 left-0 right-0
+                bg-white border-t p-5">
+
+        <div class="flex justify-between
+                    text-lg font-semibold mb-4">
+
+            <span>Total:</span>
+
+            <span>
+                ৳<span id="cart-total">0</span>
+            </span>
+
+        </div>
+
+        <button
+            class="w-full bg-black text-white
+                   py-3 rounded-full">
+
+            Checkout
+
+        </button>
+
+    </div>
+
 </div>
 
 <!-- QUICK CONTACT MODAL -->
